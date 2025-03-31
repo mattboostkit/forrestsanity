@@ -1,11 +1,11 @@
-import { Block } from "@sanity/types";
+import { PortableTextBlock } from '@portabletext/types';
 
-export function markdownToSanityBlocks(markdown: string): Block[] {
+export function markdownToSanityBlocks(markdown: string): PortableTextBlock[] {
   // Simple markdown to PortableText conversion
-  const blocks: Block[] = [];
+  const blocks: PortableTextBlock[] = [];
   const lines = markdown.split('\n');
 
-  let currentBlock: Block | null = null;
+  let currentBlock: PortableTextBlock | null = null;
 
   for (const line of lines) {
     if (line.startsWith('## ')) {
